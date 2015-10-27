@@ -60,8 +60,13 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //TODO: Implemetar a deleção do item!
+}
+
 # pragma mark - CoreData
 - (void)loadData {
+    //TODO: Colocar isso em uma thread separada!
     NSManagedObjectContext *context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Place"];
