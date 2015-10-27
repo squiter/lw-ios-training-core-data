@@ -18,6 +18,7 @@
 		815C49101BDF9BA500CBCF8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49081BDF9BA500CBCF8E /* main.m */; };
 		815C49161BDF9E8700CBCF8E /* Place+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */; };
 		815C49171BDF9E8700CBCF8E /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49151BDF9E8700CBCF8E /* Place.m */; };
+		815C491A1BDFA65600CBCF8E /* AddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49191BDFA65600CBCF8E /* AddController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+CoreDataProperties.m"; sourceTree = "<group>"; };
 		815C49141BDF9E8700CBCF8E /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		815C49151BDF9E8700CBCF8E /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		815C49181BDFA65600CBCF8E /* AddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddController.h; path = CoreData/Controllers/AddController.h; sourceTree = SOURCE_ROOT; };
+		815C49191BDFA65600CBCF8E /* AddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddController.m; path = CoreData/Controllers/AddController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 		815C48FB1BDF9BA500CBCF8E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				815C49181BDFA65600CBCF8E /* AddController.h */,
+				815C49191BDFA65600CBCF8E /* AddController.m */,
 				815C48FC1BDF9BA500CBCF8E /* ViewController.h */,
 				815C48FD1BDF9BA500CBCF8E /* ViewController.m */,
 			);
@@ -315,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815C491A1BDFA65600CBCF8E /* AddController.m in Sources */,
 				815C490A1BDF9BA500CBCF8E /* ViewController.m in Sources */,
 				815C49091BDF9BA500CBCF8E /* AppDelegate.m in Sources */,
 				815C49161BDF9E8700CBCF8E /* Place+CoreDataProperties.m in Sources */,
