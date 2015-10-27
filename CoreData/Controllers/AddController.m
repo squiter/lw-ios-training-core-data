@@ -12,17 +12,30 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
 @property (nonatomic, weak) IBOutlet UIImageView *cityImage;
-@property (nonatomic,strong) NSData *imageData;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+
 
 @end
 
 @implementation AddController
+
+- (id)init {
+    if ( self = [super init] ) {
+        [self setInitialValues];
+    }
+    return self;
+}
+
+- (void)setInitialValues {
+    self.context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.title = @"Adicionar Cidade";
+    [self setInitialValues];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,15 +78,13 @@
 
 #pragma mark - CoreDataActions
 -(IBAction)addEntry:(id)sender {
-    NSManagedObjectContext *context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
-    
-    Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:context];
+    Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:self.context];
     
     place.name = self.nameField.text;
     place.image = UIImagePNGRepresentation(self.cityImage.image);
     
     NSError *error = nil;
-    if (![context save:&error]) {
+    if (![self.context save:&error]) {
         NSLog(@"%@", error);
     }else{
         NSLog(@"%@ adcionado com sucesso!", place.name);

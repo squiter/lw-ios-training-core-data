@@ -12,10 +12,21 @@
 
 @property (nonatomic, weak) IBOutlet UITableView *placeTableView;
 @property (nonatomic, strong) NSArray *places;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 @end
 
 @implementation ViewController
+- (id)init {
+    if ( self = [super init] ) {
+        [self setInitialValues];
+    }
+    return self;
+}
+
+- (void)setInitialValues {
+    self.context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +34,7 @@
     
     self.title = @"Cidades";
     
+    [self setInitialValues];
     [self loadData];
 }
 
@@ -61,18 +73,23 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    //TODO: Implemetar a deleção do item!
+    Place *place = self.places[indexPath.row];
+    [self.context deleteObject:place];
+    
+    NSError *error = nil;
+    [self.context save:&error];
+    [self loadData];
+    
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
 }
 
 # pragma mark - CoreData
 - (void)loadData {
     //TODO: Colocar isso em uma thread separada!
-    NSManagedObjectContext *context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
-    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Place"];
 //    request.predicate = [NSPredicate predicateWithFormat:@"name = %@", @"São Paulo"];
 //    request.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
     
-    self.places = [context executeFetchRequest:request error:nil];
+    self.places = [self.context executeFetchRequest:request error:nil];
 }
 @end
