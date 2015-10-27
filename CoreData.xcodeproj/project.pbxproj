@@ -16,6 +16,8 @@
 		815C490D1BDF9BA500CBCF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815C49021BDF9BA500CBCF8E /* Main.storyboard */; };
 		815C490E1BDF9BA500CBCF8E /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 815C49051BDF9BA500CBCF8E /* CoreData.xcdatamodeld */; };
 		815C49101BDF9BA500CBCF8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49081BDF9BA500CBCF8E /* main.m */; };
+		815C49161BDF9E8700CBCF8E /* Place+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */; };
+		815C49171BDF9E8700CBCF8E /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49151BDF9E8700CBCF8E /* Place.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		815C49061BDF9BA500CBCF8E /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		815C49071BDF9BA500CBCF8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		815C49081BDF9BA500CBCF8E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		815C49121BDF9E8700CBCF8E /* Place+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+CoreDataProperties.h"; sourceTree = "<group>"; };
+		815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+CoreDataProperties.m"; sourceTree = "<group>"; };
+		815C49141BDF9E8700CBCF8E /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		815C49151BDF9E8700CBCF8E /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		815C48C11BDF9B4D00CBCF8E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				815C49111BDF9E3000CBCF8E /* Models */,
 				815C48F81BDF9BA500CBCF8E /* AppDelegate */,
 				815C48FB1BDF9BA500CBCF8E /* Controllers */,
 				815C48FE1BDF9BA500CBCF8E /* Resources */,
@@ -161,10 +168,21 @@
 			isa = PBXGroup;
 			children = (
 				815C49051BDF9BA500CBCF8E /* CoreData.xcdatamodeld */,
+				815C49121BDF9E8700CBCF8E /* Place+CoreDataProperties.h */,
+				815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */,
+				815C49141BDF9E8700CBCF8E /* Place.h */,
+				815C49151BDF9E8700CBCF8E /* Place.m */,
 				815C49071BDF9BA500CBCF8E /* Info.plist */,
 				815C49081BDF9BA500CBCF8E /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		815C49111BDF9E3000CBCF8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +317,8 @@
 			files = (
 				815C490A1BDF9BA500CBCF8E /* ViewController.m in Sources */,
 				815C49091BDF9BA500CBCF8E /* AppDelegate.m in Sources */,
+				815C49161BDF9E8700CBCF8E /* Place+CoreDataProperties.m in Sources */,
+				815C49171BDF9E8700CBCF8E /* Place.m in Sources */,
 				815C49101BDF9BA500CBCF8E /* main.m in Sources */,
 				815C490E1BDF9BA500CBCF8E /* CoreData.xcdatamodeld in Sources */,
 			);
