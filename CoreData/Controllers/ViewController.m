@@ -85,10 +85,10 @@
 
 # pragma mark - CoreData
 - (void)loadData {
-    //TODO: Colocar isso em uma thread separada!
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{});
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Place"];
 //    request.predicate = [NSPredicate predicateWithFormat:@"name = %@", @"São Paulo"];
-//    request.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
+    request.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
     
     self.places = [self.context executeFetchRequest:request error:nil];
 }
