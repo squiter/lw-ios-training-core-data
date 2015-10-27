@@ -30,6 +30,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self loadData];
+    [self.placeTableView reloadData];
+}
+
 # pragma mark - UITableViewImplementation
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
