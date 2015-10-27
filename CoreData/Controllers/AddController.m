@@ -8,9 +8,11 @@
 
 #import "AddController.h"
 
-@interface AddController ()
+@interface AddController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *nameField;
+@property (nonatomic, weak) IBOutlet UIImageView *cityImage;
+@property (nonatomic,strong) NSData *imageData;
 
 @end
 
@@ -43,6 +45,24 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)selectPhoto:(id)sender{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.cityImage.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
 #pragma mark - CoreDataActions
 -(IBAction)addEntry:(id)sender {
     NSManagedObjectContext *context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
@@ -50,7 +70,7 @@
     Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:context];
     
     place.name = self.nameField.text;
-    //place.image = NSData de aumguma coisa
+    place.image = UIImagePNGRepresentation(self.cityImage.image);
     
     NSError *error = nil;
     if (![context save:&error]) {

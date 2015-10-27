@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.title = @"Cidades";
+    
     [self loadData];
 }
 
@@ -48,7 +49,10 @@
     if (self.places.count > 0) {
         Place *place = self.places[indexPath.row];
         cell.placeName.text = place.name;
+        
         cell.placeImage.image = [UIImage imageWithData:place.image];
+        cell.placeImage.layer.cornerRadius = cell.placeImage.frame.size.height / 2;
+        cell.placeImage.layer.masksToBounds = YES;
         
         return cell;
     }else{

@@ -83,7 +83,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adicionar cidade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGT-6z-fVC">
-                                <rect key="frame" x="0.0" y="20" width="600" height="29"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -95,50 +95,71 @@
                                     <action selector="cancelButtonTap:" destination="5oP-dt-CWx" eventType="touchUpInside" id="cmz-Xi-xCl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7a-n8-GSk">
+                                <rect key="frame" x="16" y="99" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t74-Ly-o5X">
+                                <rect key="frame" x="83" y="95" width="501" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRO-nQ-7tq">
+                                <rect key="frame" x="241" y="290" width="118" height="30"/>
+                                <state key="normal" title="Escolher imagem"/>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="5oP-dt-CWx" eventType="touchUpInside" id="OTO-Va-Rh4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BVu-Gy-Kfd">
+                                <rect key="frame" x="175" y="141" width="250" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BVu-Gy-Kfd" secondAttribute="height" multiplier="172:97" id="HFU-Ax-vNX"/>
+                                    <constraint firstAttribute="width" constant="250" id="TQH-sU-iEe"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EG-6k-5np">
-                                <rect key="frame" x="273" y="265" width="54" height="35"/>
+                                <rect key="frame" x="273" y="328" width="54" height="35"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <state key="normal" title="Enviar"/>
                                 <connections>
                                     <action selector="addEntry:" destination="5oP-dt-CWx" eventType="touchUpInside" id="9za-Tz-QN1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7a-n8-GSk">
-                                <rect key="frame" x="16" y="119" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t74-Ly-o5X">
-                                <rect key="frame" x="83" y="115" width="501" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRO-nQ-7tq">
-                                <rect key="frame" x="241" y="161" width="118" height="30"/>
-                                <state key="normal" title="Escolher imagem"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fRO-nQ-7tq" firstAttribute="centerX" secondItem="eEH-06-SGA" secondAttribute="centerX" id="08W-cb-9GW"/>
                             <constraint firstAttribute="trailing" secondItem="t74-Ly-o5X" secondAttribute="trailing" constant="16" id="4ZC-W5-IIe"/>
                             <constraint firstItem="N7a-n8-GSk" firstAttribute="top" secondItem="bGT-6z-fVC" secondAttribute="bottom" constant="70" id="4bV-kF-Qi1"/>
                             <constraint firstItem="N7a-n8-GSk" firstAttribute="centerY" secondItem="t74-Ly-o5X" secondAttribute="centerY" id="7WW-gT-1fG"/>
                             <constraint firstItem="N7a-n8-GSk" firstAttribute="leading" secondItem="eEH-06-SGA" secondAttribute="leading" constant="16" id="Cme-Gl-4rz"/>
-                            <constraint firstItem="1EG-6k-5np" firstAttribute="top" secondItem="fRO-nQ-7tq" secondAttribute="bottom" constant="74" id="HbE-7F-gnh"/>
+                            <constraint firstItem="BVu-Gy-Kfd" firstAttribute="leading" secondItem="eEH-06-SGA" secondAttribute="leading" constant="32" id="Fmv-it-Dxh"/>
+                            <constraint firstAttribute="trailing" secondItem="BVu-Gy-Kfd" secondAttribute="trailing" constant="64" id="QKr-pT-3dW"/>
                             <constraint firstItem="bGT-6z-fVC" firstAttribute="top" secondItem="DGa-lQ-mOV" secondAttribute="bottom" id="SL0-o9-1am"/>
                             <constraint firstItem="B9k-WG-6Ep" firstAttribute="leading" secondItem="eEH-06-SGA" secondAttribute="leading" constant="8" id="Thp-7S-XXV"/>
                             <constraint firstAttribute="trailing" secondItem="bGT-6z-fVC" secondAttribute="trailing" id="VbQ-Ce-ZSU"/>
                             <constraint firstItem="bGT-6z-fVC" firstAttribute="leading" secondItem="eEH-06-SGA" secondAttribute="leading" id="We1-0T-boP"/>
                             <constraint firstItem="t74-Ly-o5X" firstAttribute="leading" secondItem="N7a-n8-GSk" secondAttribute="trailing" constant="16" id="Z6Q-U5-VZ9"/>
-                            <constraint firstItem="fRO-nQ-7tq" firstAttribute="top" secondItem="t74-Ly-o5X" secondAttribute="bottom" constant="16" id="dTO-PE-dLP"/>
-                            <constraint firstItem="1EG-6k-5np" firstAttribute="centerX" secondItem="eEH-06-SGA" secondAttribute="centerX" id="jiG-Lg-F6M"/>
+                            <constraint firstItem="BVu-Gy-Kfd" firstAttribute="centerX" secondItem="eEH-06-SGA" secondAttribute="centerX" id="bPj-3S-3oP"/>
+                            <constraint firstItem="BVu-Gy-Kfd" firstAttribute="top" secondItem="t74-Ly-o5X" secondAttribute="bottom" constant="16" id="cyH-d8-7IS"/>
+                            <constraint firstItem="1EG-6k-5np" firstAttribute="top" secondItem="fRO-nQ-7tq" secondAttribute="bottom" constant="8" id="gev-XV-Ut2"/>
                             <constraint firstItem="3DH-0L-mYC" firstAttribute="top" secondItem="B9k-WG-6Ep" secondAttribute="bottom" constant="8" id="lp8-SJ-our"/>
                             <constraint firstItem="bGT-6z-fVC" firstAttribute="centerX" secondItem="eEH-06-SGA" secondAttribute="centerX" id="pbi-2q-9eg"/>
+                            <constraint firstItem="fRO-nQ-7tq" firstAttribute="centerX" secondItem="eEH-06-SGA" secondAttribute="centerX" id="uE9-6W-Lxr"/>
+                            <constraint firstItem="fRO-nQ-7tq" firstAttribute="top" secondItem="BVu-Gy-Kfd" secondAttribute="bottom" constant="8" id="wb1-Qw-Ahy"/>
+                            <constraint firstItem="1EG-6k-5np" firstAttribute="centerX" secondItem="eEH-06-SGA" secondAttribute="centerX" id="yJ0-ly-Ogf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Fmv-it-Dxh"/>
+                                <exclude reference="QKr-pT-3dW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="cityImage" destination="BVu-Gy-Kfd" id="Uox-Fd-djc"/>
                         <outlet property="nameField" destination="t74-Ly-o5X" id="LZX-ed-wZq"/>
                     </connections>
                 </viewController>
