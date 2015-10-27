@@ -57,6 +57,7 @@
         NSLog(@"%@", error);
     }else{
         NSLog(@"%@ adcionado com sucesso!", place.name);
+        
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

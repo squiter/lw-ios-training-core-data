@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "PlaceTableViewCell.h"
 #import "Place.h"
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UITableViewController
 
 @end
 

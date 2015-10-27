@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UITableView *placeTableView;
+@property (nonatomic, strong) NSArray *places;
 
 @end
 
@@ -19,6 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.title = @"Cidades";
+    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,30 +30,35 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)newEntry {
-    NSManagedObjectContext *context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
+# pragma mark - UITableViewImplementation
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.places.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PlaceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"
+                                                                  forIndexPath:indexPath];
     
-    Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:context];
-    
-    //place.name = @"Belo Horizonte";
-    //place.image = NSData de aumguma coisa
-    
-    NSError *error = nil;
-    if (![context save:&error]) {
-        NSLog(@"%@", error);
+    if (self.places.count > 0) {
+        Place *place = self.places[indexPath.row];
+        cell.placeName.text = place.name;
+        cell.placeImage.image = [UIImage imageWithData:place.image];
+        
+        return cell;
+    }else{
+        return nil;
     }
 }
 
-- (void)fetchEntries {
+# pragma mark - CoreData
+- (void)loadData {
     NSManagedObjectContext *context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Place"];
-    request.predicate = [NSPredicate predicateWithFormat:@"name = %@", @"São Paulo"];
-    request.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
+//    request.predicate = [NSPredicate predicateWithFormat:@"name = %@", @"São Paulo"];
+//    request.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
     
-    NSArray *array = [context executeFetchRequest:request error:nil];
-    for (Place *p in array) {
-        NSLog(@"%@", p.name);
-    }
+    self.places = [context executeFetchRequest:request error:nil];
 }
 @end

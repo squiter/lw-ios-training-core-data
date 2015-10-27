@@ -19,6 +19,7 @@
 		815C49161BDF9E8700CBCF8E /* Place+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */; };
 		815C49171BDF9E8700CBCF8E /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49151BDF9E8700CBCF8E /* Place.m */; };
 		815C491A1BDFA65600CBCF8E /* AddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49191BDFA65600CBCF8E /* AddController.m */; };
+		815C491E1BDFAF9E00CBCF8E /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C491D1BDFAF9E00CBCF8E /* PlaceTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +57,14 @@
 		815C49061BDF9BA500CBCF8E /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		815C49071BDF9BA500CBCF8E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		815C49081BDF9BA500CBCF8E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		815C49121BDF9E8700CBCF8E /* Place+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Place+CoreDataProperties.h"; sourceTree = "<group>"; };
-		815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Place+CoreDataProperties.m"; sourceTree = "<group>"; };
-		815C49141BDF9E8700CBCF8E /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
-		815C49151BDF9E8700CBCF8E /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		815C49121BDF9E8700CBCF8E /* Place+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Place+CoreDataProperties.h"; path = "../Supporting Files/Place+CoreDataProperties.h"; sourceTree = "<group>"; };
+		815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Place+CoreDataProperties.m"; path = "../Supporting Files/Place+CoreDataProperties.m"; sourceTree = "<group>"; };
+		815C49141BDF9E8700CBCF8E /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Place.h; path = "../Supporting Files/Place.h"; sourceTree = "<group>"; };
+		815C49151BDF9E8700CBCF8E /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Place.m; path = "../Supporting Files/Place.m"; sourceTree = "<group>"; };
 		815C49181BDFA65600CBCF8E /* AddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddController.h; path = CoreData/Controllers/AddController.h; sourceTree = SOURCE_ROOT; };
 		815C49191BDFA65600CBCF8E /* AddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddController.m; path = CoreData/Controllers/AddController.m; sourceTree = SOURCE_ROOT; };
+		815C491C1BDFAF9E00CBCF8E /* PlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
+		815C491D1BDFAF9E00CBCF8E /* PlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		815C48C11BDF9B4D00CBCF8E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				815C491B1BDFAF7200CBCF8E /* Views */,
 				815C49111BDF9E3000CBCF8E /* Models */,
 				815C48F81BDF9BA500CBCF8E /* AppDelegate */,
 				815C48FB1BDF9BA500CBCF8E /* Controllers */,
@@ -173,10 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				815C49051BDF9BA500CBCF8E /* CoreData.xcdatamodeld */,
-				815C49121BDF9E8700CBCF8E /* Place+CoreDataProperties.h */,
-				815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */,
-				815C49141BDF9E8700CBCF8E /* Place.h */,
-				815C49151BDF9E8700CBCF8E /* Place.m */,
 				815C49071BDF9BA500CBCF8E /* Info.plist */,
 				815C49081BDF9BA500CBCF8E /* main.m */,
 			);
@@ -186,8 +186,21 @@
 		815C49111BDF9E3000CBCF8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				815C49121BDF9E8700CBCF8E /* Place+CoreDataProperties.h */,
+				815C49131BDF9E8700CBCF8E /* Place+CoreDataProperties.m */,
+				815C49141BDF9E8700CBCF8E /* Place.h */,
+				815C49151BDF9E8700CBCF8E /* Place.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		815C491B1BDFAF7200CBCF8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				815C491C1BDFAF9E00CBCF8E /* PlaceTableViewCell.h */,
+				815C491D1BDFAF9E00CBCF8E /* PlaceTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +340,7 @@
 				815C49171BDF9E8700CBCF8E /* Place.m in Sources */,
 				815C49101BDF9BA500CBCF8E /* main.m in Sources */,
 				815C490E1BDF9BA500CBCF8E /* CoreData.xcdatamodeld in Sources */,
+				815C491E1BDFAF9E00CBCF8E /* PlaceTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
