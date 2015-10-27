@@ -59,6 +59,9 @@
                                 <rect key="frame" x="273" y="265" width="54" height="35"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <state key="normal" title="Enviar"/>
+                                <connections>
+                                    <action selector="addEntry:" destination="5oP-dt-CWx" eventType="touchUpInside" id="9za-Tz-QN1"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7a-n8-GSk">
                                 <rect key="frame" x="16" y="119" width="51" height="21"/>
@@ -95,6 +98,9 @@
                             <constraint firstItem="bGT-6z-fVC" firstAttribute="centerX" secondItem="eEH-06-SGA" secondAttribute="centerX" id="pbi-2q-9eg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameField" destination="t74-Ly-o5X" id="LZX-ed-wZq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9q-xC-GNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,7 +10,7 @@
 
 @interface AddController ()
 
-@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UITextField *nameField;
 
 @end
 
@@ -41,6 +41,24 @@
 #pragma mark - IBActions
 - (IBAction)cancelButtonTap:(id)sender{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - CoreDataActions
+-(IBAction)addEntry:(id)sender {
+    NSManagedObjectContext *context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
+    
+    Place *place = [NSEntityDescription insertNewObjectForEntityForName:@"Place" inManagedObjectContext:context];
+    
+    place.name = self.nameField.text;
+    //place.image = NSData de aumguma coisa
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"%@", error);
+    }else{
+        NSLog(@"%@ adcionado com sucesso!", place.name);
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end
