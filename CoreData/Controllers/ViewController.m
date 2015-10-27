@@ -98,6 +98,15 @@
         });
     
     });
+}
 
+#pragma mark - Navigation
+    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"goToDetail"]) {
+        DetailViewController *detailVC = segue.destinationViewController;
+        Place *place = self.places[self.tableView.indexPathForSelectedRow.row];
+        detailVC.place = place;
+    }
 }
 @end

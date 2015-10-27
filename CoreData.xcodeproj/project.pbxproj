@@ -20,6 +20,7 @@
 		815C49171BDF9E8700CBCF8E /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49151BDF9E8700CBCF8E /* Place.m */; };
 		815C491A1BDFA65600CBCF8E /* AddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49191BDFA65600CBCF8E /* AddController.m */; };
 		815C491E1BDFAF9E00CBCF8E /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C491D1BDFAF9E00CBCF8E /* PlaceTableViewCell.m */; };
+		815C49211BDFDBE500CBCF8E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C49201BDFDBE500CBCF8E /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		815C49191BDFA65600CBCF8E /* AddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddController.m; path = CoreData/Controllers/AddController.m; sourceTree = SOURCE_ROOT; };
 		815C491C1BDFAF9E00CBCF8E /* PlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
 		815C491D1BDFAF9E00CBCF8E /* PlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewCell.m; sourceTree = "<group>"; };
+		815C491F1BDFDBE500CBCF8E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		815C49201BDFDBE500CBCF8E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 				815C49191BDFA65600CBCF8E /* AddController.m */,
 				815C48FC1BDF9BA500CBCF8E /* ViewController.h */,
 				815C48FD1BDF9BA500CBCF8E /* ViewController.m */,
+				815C491F1BDFDBE500CBCF8E /* DetailViewController.h */,
+				815C49201BDFDBE500CBCF8E /* DetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 			files = (
 				815C491A1BDFA65600CBCF8E /* AddController.m in Sources */,
 				815C490A1BDF9BA500CBCF8E /* ViewController.m in Sources */,
+				815C49211BDFDBE500CBCF8E /* DetailViewController.m in Sources */,
 				815C49091BDF9BA500CBCF8E /* AppDelegate.m in Sources */,
 				815C49161BDF9E8700CBCF8E /* Place+CoreDataProperties.m in Sources */,
 				815C49171BDF9E8700CBCF8E /* Place.m in Sources */,

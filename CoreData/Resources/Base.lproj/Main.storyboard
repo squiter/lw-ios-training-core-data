@@ -47,6 +47,7 @@
                                 <connections>
                                     <outlet property="placeImage" destination="OaA-qK-Pfj" id="GkS-qc-ZsQ"/>
                                     <outlet property="placeName" destination="m7a-vW-YEJ" id="R3L-dm-amy"/>
+                                    <segue destination="Wxc-fn-2kT" kind="show" identifier="goToDetail" id="WrG-ry-PEE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,6 +70,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dY-XB-v4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1377" y="535"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="YDx-nk-wUb">
+            <objects>
+                <viewController id="Wxc-fn-2kT" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hhF-PH-von"/>
+                        <viewControllerLayoutGuide type="bottom" id="Saf-zC-03q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H5G-La-Mb8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E00-KP-CFN">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E00-KP-CFN" firstAttribute="leading" secondItem="H5G-La-Mb8" secondAttribute="leading" id="0Rt-Vp-b7C"/>
+                            <constraint firstItem="Saf-zC-03q" firstAttribute="top" secondItem="E00-KP-CFN" secondAttribute="bottom" id="7aE-cJ-hPg"/>
+                            <constraint firstAttribute="trailing" secondItem="E00-KP-CFN" secondAttribute="trailing" id="isc-qt-1qx"/>
+                            <constraint firstItem="E00-KP-CFN" firstAttribute="top" secondItem="hhF-PH-von" secondAttribute="bottom" id="tdq-uE-Zfn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityImage" destination="E00-KP-CFN" id="jTV-B4-ACn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGJ-aH-MM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="535"/>
         </scene>
         <!--Add Controller-->
         <scene sceneID="U0S-bE-rLa">

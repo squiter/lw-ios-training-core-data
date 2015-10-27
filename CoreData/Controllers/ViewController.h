@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "PlaceTableViewCell.h"
 #import "Place.h"
+#import "DetailViewController.h"
 
 @interface ViewController : UITableViewController
 
